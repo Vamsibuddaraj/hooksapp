@@ -2,44 +2,35 @@ import React, {useState,useEffect} from 'react'
 import axios from 'axios'
 
 function DataFetching() {
-    const [post,setPost] = useState({})
-    const [id,setId] = useState(1)
-    const [idFromButtonClick,setIdFromButtonClick] = useState(1)
+    const [posts,setPosts] = useState([])
+    
 
-    useEffect(
+    useEffect(    
+        //the arrow function below will get executed after every render
         () => {
-            axios.get(`https://jsonplaceholder.typicode.com/posts/${idFromButtonClick}`)
+            axios.get('https://jsonplaceholder.typicode.com/posts')
             .then( res => {
                 console.log(res)
-                setPost(res.data)
+                setPosts(res.data)
             })
             .catch(err => {
                 console.log(err)
             })
+        
         },
-        [idFromButtonClick]  //run this useEffect hook only once ie after componentDidMount
+        [] //run this useEffect hook only once ie after component did mount
     )
-    const handleClick = () => {
-        setIdFromButtonClick(id)
-    }
 
 
 
 
     return (
         <div>
-        <input 
-            type = "text"
-            value = {id}
-            onChange = { e => setId(e.target.value)}
-            />
-            <button type = "button" onClick = {handleClick}> fetch post</button>
-            <div>{post.title}</div>
-           {/* <ul>{
+            <ul>{
                 posts.map(
                     post => <li key = {post.id}>{post.title}</li>
                 )
-            }</ul>*/}
+            }</ul>
         </div>
     )
 }
