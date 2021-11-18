@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import DataFetching from './components/hooks/DataFetching';
+import DataFetching from './components/DataFetching';
+
 
 function App() {
   return (
