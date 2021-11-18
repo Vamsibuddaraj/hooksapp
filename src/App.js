@@ -1,12 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-import DataFetching from './components/DataFetching';
+import React from 'react';
+import ComponentA from './components/contexthook/ComponentA';
+
+
+
+export const UserContext = React.createContext()
+
 
 
 function App() {
   return (
     <div className="App">
-      <DataFetching/>
+      <UserContext.Provider value={'vamsi'} >
+        <ComponentA/>
+      </UserContext.Provider>
     </div>
   );
 }
