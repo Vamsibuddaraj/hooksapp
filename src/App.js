@@ -7,6 +7,7 @@ import CompA from './components/contextNreducer/CompA.JS';
 import CompB from './components/contextNreducer/CompB.JS';
 import CompC from './components/contextNreducer/CompC.JS';
 import DataFectching from './components/useReducercases/DataFetching';
+import DataFetchingTwo from './components/useReducercases/DataFetchingTwo';
 
 
 
@@ -30,7 +31,7 @@ function App() {
     
     <div className="App">
     
-    <DataFectching/>
+    <DataFetchingTwo/>
       
     </div>
     
