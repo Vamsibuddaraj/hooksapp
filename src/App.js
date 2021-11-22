@@ -1,4 +1,4 @@
-
+ 
 import './App.css';
 import React, { useReducer } from 'react';
 
@@ -6,6 +6,7 @@ import React, { useReducer } from 'react';
 import CompA from './components/contextNreducer/CompA.JS';
 import CompB from './components/contextNreducer/CompB.JS';
 import CompC from './components/contextNreducer/CompC.JS';
+import DataFectching from './components/useReducercases/DataFetching';
 
 
 
@@ -24,20 +25,15 @@ const reducer = (state, action) => {
 
 
 function App() {
-  const [count, dispatch] = useReducer(reducer, initialState)
+  
   return (
-    <CountContext.Provider 
-              value = {  
-                        {countState: count, countDispatch: dispatch} 
-                       }>
+    
     <div className="App">
-    Count in app.js is {count}
-    <CompA/>
-    <CompB/>
-    <CompC/>
+    
+    <DataFectching/>
       
     </div>
-    </CountContext.Provider>
+    
   );
 }
 
